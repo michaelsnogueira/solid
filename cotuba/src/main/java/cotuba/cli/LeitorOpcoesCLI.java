@@ -1,6 +1,7 @@
 package cotuba.cli;
 
 
+import cotuba.application.ParametrosCotuba;
 import org.apache.commons.cli.*;
 
 import java.io.File;
@@ -10,7 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Comparator;
 
-class LeitorOpcoesCLI {
+class LeitorOpcoesCLI implements ParametrosCotuba {
 
     private Path diretorioDosMD;    //	inserido
     private String formato;    //	inserido
