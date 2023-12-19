@@ -1,6 +1,5 @@
 package cotuba.md;
 
-import cotuba.application.RenderizadorMDParaHTML;
 import cotuba.domain.Capitulo;
 import org.commonmark.node.AbstractVisitor;
 import org.commonmark.node.Heading;
@@ -19,9 +18,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @Component
-public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHTML {
+public class RenderizadorMDParaHTML {
 
-    @Override
     public List<Capitulo> renderiza(Path diretorioDosMD) {
         return obtemArquivosMD(diretorioDosMD).stream()
                 .map(arquivoMD -> {
@@ -32,7 +30,6 @@ public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHT
                 }).toList();
     }
 
-    @Override
     public List<Path> obtemArquivosMD(Path diretorioDosMD) {
 
         PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:**/*.md");
