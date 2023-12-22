@@ -13,9 +13,9 @@ public class Main {
         try {
             var opcoesCLI = new LeitorOpcoesCLI(args);
             modoVerboso = opcoesCLI.isModoVerboso();
-            ApplicationContext applicationContext	=
+            ApplicationContext applicationContext =
                     new AnnotationConfigApplicationContext(CotubaConfig.class);
-            Cotuba	cotuba	=	applicationContext.getBean(Cotuba.class);
+            Cotuba cotuba = applicationContext.getBean(Cotuba.class);
             cotuba.executa(opcoesCLI);
             System.out.println("Arquivo	gerado	com	sucesso:	"
                     + opcoesCLI.getArquivoDeSaida());

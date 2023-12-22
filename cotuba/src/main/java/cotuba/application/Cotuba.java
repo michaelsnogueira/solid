@@ -24,7 +24,7 @@ public class Cotuba {
         ebook.setFormato(parametros.getFormato());
         ebook.setArquivoDeSaida(parametros.getArquivoDeSaida());
         ebook.setCapitulos(capitulos);
-        var gerador = GeradorEbook.cria(parametros.getFormato());
+        var gerador = parametros.getFormato().getGerador();
         gerador.gera(ebook);
 
     }

@@ -98,7 +98,12 @@ class LeitorOpcoesCLI implements ParametrosCotuba {
 
     private void trataFormato(CommandLine cmd) {
         String nomeDoFormatoDoEbook = cmd.getOptionValue("format");
-        formato = FormatoEbook.valueOf(nomeDoFormatoDoEbook.toUpperCase());
+        if (nomeDoFormatoDoEbook == null) {
+            formato = FormatoEbook.PDF;
+        } else {
+            formato = FormatoEbook.valueOf(nomeDoFormatoDoEbook.toUpperCase());
+
+        }
     }
 
     private void trataArquivoDeSaida(CommandLine cmd) {
