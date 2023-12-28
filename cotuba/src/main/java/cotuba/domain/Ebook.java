@@ -1,9 +1,11 @@
 package cotuba.domain;
 
+import cotuba.application.EbooksParaLeitura;
+
 import java.nio.file.Path;
 import java.util.List;
 
-public class Ebook {
+public class Ebook implements EbooksParaLeitura {
     private FormatoEbook formato;
     private Path arquivoDeSaida;
 
@@ -15,6 +17,11 @@ public class Ebook {
 
     public FormatoEbook getFormato() {
         return formato;
+    }
+
+    @Override
+    public Path getArquivoSaida() {
+        return null;
     }
 
     public void setFormato(FormatoEbook formato) {

@@ -3,6 +3,7 @@ package cotuba.application;
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
 import cotuba.md.RenderizadorMDParaHTML;
+import cotuba.plugin.AoFinalizarGeracao;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class Cotuba {
         ebook.setCapitulos(capitulos);
         var gerador = parametros.getFormato().getGerador();
         gerador.gera(ebook);
+        AoFinalizarGeracao.gerou(ebook);
 
     }
 }

@@ -1,10 +1,18 @@
 package cotuba.domain;
 
-public class Capitulo {
+import cotuba.application.CapitulosSoParaLeitura;
+
+public class Capitulo implements CapitulosSoParaLeitura {
     private String titulo;
 
+    @Override
     public String getTitulo() {
         return titulo;
+    }
+
+    @Override
+    public String getConteudoHtml() {
+        return null;
     }
 
     public void setTitulo(String titulo) {
@@ -15,10 +23,10 @@ public class Capitulo {
         return conteudoHTML;
     }
 
+    private String conteudoHTML;
+
     public void setConteudoHTML(String conteudoHTML) {
         this.conteudoHTML = conteudoHTML;
     }
-
-    private String conteudoHTML;
 //	getters	e	setters...
 }
